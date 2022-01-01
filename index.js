@@ -8,5 +8,5 @@ productForm.onsubmit = function (e) {
     let index = new Date();
     let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.push(JSON.stringify({index: index.getTime(), name: name, number: number, price: price}));
-    localStorage.setItem('favorites', JSON.stringify(favorites));
+    localStorage.setItem(index.getTime(), JSON.stringify(favorites));
 }
